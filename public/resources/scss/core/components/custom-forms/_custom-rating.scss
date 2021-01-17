@@ -1,0 +1,55 @@
+//
+// Custom rating
+//
+
+.custom-rating {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    min-height: $font-size-base * $line-height-base;
+
+    input {
+        position: absolute;
+        z-index: -1; // Put the input behind the label so it doesn't overlay text
+        opacity: 0;
+    }
+
+    label {
+        width: 1rem;
+        height: 1.5rem;
+        margin-right: .375rem;
+        white-space: nowrap;
+        position: relative;
+        margin-bottom: 0;
+        vertical-align: top;
+        cursor: pointer;
+        color: $star-rating-color;
+
+        &:before {
+            width: $custom-control-indicator-size;
+            height: $custom-control-indicator-size;
+            content: "\f005";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            @include transition($transition-base);
+        }
+    }
+
+    > input:checked ~ label {
+        color: $star-rating-color-active;
+
+    }
+
+    > label:hover,
+    > label:hover ~ label {
+        color: $star-rating-color-active;
+    }
+
+    > input:checked + label:hover,
+    > input:checked + label:hover ~ label,
+    > input:checked ~ label:hover,
+    > input:checked ~ label:hover ~ label,
+    > label:hover ~ input:checked ~ label {
+        color: transparentize($star-rating-color-active, .4);
+    }
+}

@@ -1,0 +1,42 @@
+<% include ./partials/header %> 
+<a href="/" class="btn btn-dark btn-icon-only rounded-circle position-absolute zindex-101 left-4 top-6 d-lg-none" data-toggle="tooltip" data-placement="right" title="Go back">
+    <span class="btn-inner--icon">
+        <i data-feather="arrow-left"></i>
+    </span>Back
+</a>
+    <section class="slice slice-lg" id="sct-form-contact">
+        <div class="container position-relative zindex-100">
+            <div class="row justify-content-center mb-3">
+                <div class="col-lg-6 text-center">
+                    <h3>Contact us</h3>
+                    <p class="lh-150">If there's something we can help you with, just let us know. <br/> We'll be more than happy to offer you our help</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Form -->
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="email" placeholder="email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="text" placeholder="+2340002000200" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control form-control-lg" placeholder="Tell us a few words ..." rows="3" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <!-- <div class="g-recaptcha" data-sitekey="6Lfs5ScUAAAAANAJwGrdfvWLFRRiVbKRE2vfoaFj"></div> -->
+                            <button type="reset" class="btn-reset"></button>
+                            <button type="submit" class="btn btn-block btn-lg btn-primary mt-4">Send your message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% include ./partials/footer %>
+	

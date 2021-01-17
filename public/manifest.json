@@ -1,0 +1,16 @@
+{
+    "name": "PWAConf",
+    "short_name": "PWAConf",
+    "start_url": "/views/welcome/ejs",
+    "display": "standalone",
+    "background_color": "#2A3443",
+    "description": "An app for SEALED",
+    "theme_color": "#2A3443",
+    "icons": [
+      {
+        "src": "./images/mine.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

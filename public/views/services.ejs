@@ -1,0 +1,323 @@
+<% include ./partials/header %>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="AICOL SYSTEMS">
+    <title>Services - Worka Nigeria</title>
+    <!-- Preloader -->
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png">
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="../../assets/css/quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false" aria-labelledby="modal-cookies" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
+            <div class="modal-content bg-dark-dark">
+                <div class="modal-body">
+                    <!-- Text -->
+                    <p class="text-sm text-white mb-3">
+                        SealedApp uses cookies so that our App works for you. By using this App, you agree to our use of cookies.
+                    </p>
+                    <!-- Buttons -->
+                    <a href="/users/terms" class="btn btn-sm btn-white" target="_blank">Learn more</a>
+                    <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header-transparent" id="header-main">
+    </header>
+<a href="/" class="btn btn-white btn-icon-only rounded-circle position-absolute zindex-101 left-4 top-6 d-lg-none" data-toggle="tooltip" data-placement="right" title="Go back">
+    <span class="btn-inner--icon">
+        <i data-feather="arrow-left"></i>
+    </span>Back
+</a>
+    <!-- Main content -->
+    <section class="slicer slicer-lg bg-primary pb-6">
+        <div data-offset-top="#navbar-main">
+            <div class="container pt-lg-3 pb-lg-9 pb-7">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h1 class="text-white">Everything Earning <br/>In <strong>one place</strong></h1>
+                        <p class="lead text-white opacity-8">
+                            Cater to your financial needs by driving meaningful growth for yourself and companies.
+                        </p>
+                        <div class="mt-3">
+                            <a href="/payment/paystack/pay" class="btn btn-warning btn-icon" target="_blank">
+                                <span class="btn-inner--text">Join Worka-Nigeria</span>
+                                <span class="btn-inner--icon">
+                                    <i data-feather="arrow-right"></i>
+                                </span>
+                            </a>
+                            <a class="btn btn-white" href="/users/contact">Ask a Question</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SVG Separator -->
+            <div class="shape-container shape-position-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="slice pt-0">
+        <div class="container position-relative zindex-100">
+            <div class="row ">
+                <div class="col-lg-3 col-sm-6 mt-n10  floating-lg">
+                    <div class="card hover-translate-y-n10 hover-shadow-lg">
+                        <div class="card-body">
+                            <div class="pb-4">
+                                <div class="icon bg-dark text-white rounded-circle icon-shape shadow">
+                                    <i data-feather="droplet"></i>
+                                </div>
+                            </div>
+                            <div class="pt-2 pb-2">
+                                <h5>Simple Tasks</h5>
+                                <p class="text-muted mb-0">
+                                    All the Earning tasks are very simple. They are carefully designed as such, for ease of completion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-sm-n10  floating-sm">
+                    <div class="card hover-translate-y-n10 hover-shadow-lg">
+                        <div class="card-body">
+                            <div class="pb-4">
+                                <div class="icon bg-dark text-white rounded-circle icon-shape shadow">
+                                    <i data-feather="smartphone"></i>
+                                </div>
+                            </div>
+                            <div class="pt-2 pb-2">
+                                <h5>Instant Payments</h5>
+                                <p class="text-muted mb-0">
+                                    We're proudly the first freelance company to pay instantly to users' account, once payment is requested.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-lg-n10  floating-lg">
+                    <div class="card hover-translate-y-n10 hover-shadow-lg">
+                        <div class="card-body">
+                            <div class="pb-4">
+                                <div class="icon bg-dark text-white rounded-circle icon-shape shadow">
+                                    <i data-feather="external-link"></i>
+                                </div>
+                            </div>
+                            <div class="pt-2 pb-2">
+                                <h5> Highest Earnings</h5>
+                                <p class="text-muted mb-0">
+                                    Earning rates for tasks on Worka are highest in the industry; enabling our Users trust their future with us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-lg-n10  floating-sm">
+                    <div class="card hover-translate-y-n10 hover-shadow-lg">
+                        <div class="card-body">
+                            <div class="pb-4">
+                                <div class="icon bg-dark text-white rounded-circle icon-shape shadow">
+                                  
+                                    <i data-feather="droplet"></i>
+                                </div>
+                            </div>
+                            <div class="pt-2 pb-2">
+                                <h5>Trusted Partners</h5>
+                                <p class="text-muted mb-0">
+                                   Because we have proven integrity, top companies like Youtube and Swagbucks join us to empower our Users.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg d-sm-none">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <div class="card border-0 shadow-lg rounded-lg floating-sm">
+                        <div class="card-body">
+                            <h2 class="font-weight-bold text-center mb-0">
+                                Over 6k+
+                            </h2>
+                            <p class="text-center mb-0">
+                                Happy Earners
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card border-0 shadow-lg rounded-lg floating-lg">
+                        <div class="card-body">
+                            <h2 class="font-weight-bold text-center mb-0">
+                                3m +
+                            </h2>
+                            <p class="text-center mb-0">
+                               Tasks Completed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card border-0 shadow-lg rounded-lg floating-lg">
+                        <div class="card-body">
+                            <h2 class="font-weight-bold text-center mb-0">
+                                10m +
+                            </h2>
+                            <p class="text-center mb-0">
+                                Page views
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg">
+        <div class="container">
+            <!-- Title -->
+            <!-- Section title -->
+            <div class="row mb-4 justify-content-center text-center">
+                <div class="col-lg-8 col-md-10">
+                    <h2 class=" mt-2">Our Uniqueness</h2>
+                    <div class="mt-2">
+                        <p class="lead lh-180">Our Users are proud and happy to earn with Us.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Cards -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card bg-dark hover-shadow-lg">
+                        <div class="card-body py-5">
+                            <div class="d-flex align-items-start">
+                                <div class="icon rounded-circle text-white">
+                                    <i data-feather="code"></i>
+                                </div>
+                                <div class="icon-text pl-4">
+                                    <h5 class="ma-0 text-white">  Easy to Use  </h5>
+                                    <p class="mb-0 text-white opacity-8">
+                                       All Worka Nigeria interfaces are smooth & intuitive; 
+                                       offering a seamless & super-easy user experience.
+                                       
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card bg-warning hover-shadow-lg">
+                        <div class="card-body py-5">
+                            <div class="d-flex align-items-start">
+                                <div class="icon text-white rounded-circle">
+                                    <i data-feather="crop"></i>
+                                </div>
+                                <div class="icon-text pl-4">
+                                    <h5 class="ma-0 text-white"> Fully functional across any device </h5>
+                                    <p class="mb-0 text-white opacity-8">
+                                        Worka Nigeria is an innovative platform, 
+                                        combining beautiful design and flawless functionality usable across any devices.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% include ./partials/footer %>
+   
+    <!-- Core JS  -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/libs/svg-injector/dist/svg-injector.min.js"></script>
+    <script src="../../assets/libs/feather-icons/dist/feather.min.js"></script>
+    <!-- Optional JS -->
+    <script src="../../assets/libs/in-view/dist/in-view.min.js"></script>
+    <script src="../../assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
+    <script src="../../assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <!-- Page JS -->
+    <script src="../../assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+    <!-- Quick JS -->
+    <script src="../../assets/js/quick-website.js"></script>
+    <!-- Feather Icons -->
+    <script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+    </script>
+
+    
+</body>
+
+</html>

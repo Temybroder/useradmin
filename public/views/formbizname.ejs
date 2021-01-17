@@ -1,0 +1,39 @@
+
+      <div class="row mt-5">
+        <div class="col-md-4 m-auto">
+          <div class="card card-body">
+  
+    <div class="card text-white bg-warning md-6">
+      <div class="card-header" style="text-align:center;"><h4> <b>Name Search </b>  :<br/>Corporate Affairs Commission</h4></div>
+    
+    </div>
+  
+  
+  <br/>
+ 
+  <form action="/subs/submitbnf" method="POST">
+         <div class="text-center">
+                                    <span class="badge badge-pill badge-secondary mb-3">Name Search Service </span>
+                                     
+                                   
+                                      <div class="form-group">
+                                        <label for="inputname">This service checks the CAC portal for Business Name's availablity</label>
+                                        <input type="name" name="name" style="border-radius: 30px; text-align: center;" class="form-control" id="name" placeholder="Enter Proposed Business Name"  value="<%= typeof name != 'undefined' ? name : '' %>">
+                                      </div>
+                                    
+                                  
+                                  <div class="form-row justify-content-center">
+                                      <div class="form-group mt-3">
+                                    
+                                        <button type="submit" class="btn btn-info" style="border-radius: 30px;">Submit for Processing</button>
+                                      </div>
+                                  </div>
+								    </div>
+                                    </form>
+  
+    
+     </div>
+    </div>
+   </div>
+
+

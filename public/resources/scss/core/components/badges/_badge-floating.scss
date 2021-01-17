@@ -1,0 +1,21 @@
+//
+// Badge floating
+//
+
+
+.btn {
+    .badge-floating {
+        position: absolute;
+        top: -50%;
+        right: .5rem;
+        transform: translate(50%, 50%);
+        margin: 0;
+        border: 3px solid;
+        padding-left: .5rem;
+        padding-right: .5rem;
+
+        &.badge-circle {
+            right: 0;
+        }
+    }
+}

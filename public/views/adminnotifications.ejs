@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="AICOL SYSTEMS">
+    <title>SealedApp</title>
+    <!-- Preloader -->
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png"><!-- Font Awesome -->
+    <link rel="stylesheet" href="../../assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="../../assets/css/quick-website.css" id="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- User profile modal -->
+    <!-- Customizer modal -->
+    <div class="modal fade fixed-right" id="modal-notifications" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-vertical" role="document">
+            <div class="modal-content">
+                <div class="modal-header py-3 align-items-center">
+                    <div class="modal-title">
+                        <h6 class="mb-0">Notifications</h6>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-flush">
+                      <% include ./partials/messages %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false" aria-labelledby="modal-cookies" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
+            <div class="modal-content bg-dark-dark">
+                <div class="modal-body">
+                    <!-- Text -->
+                    <p class="text-sm text-white mb-3">
+                        Worka Nigeria uses cookies so that our app works for you. By using this app, you agree to our use of cookies.
+                    </p>
+                    <!-- Buttons -->
+                    <a href="/users/terms" class="btn btn-sm btn-white" target="_blank">Learn more</a>
+                    <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="" id="header-main">
+
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg shadow navbar-light" id="navbar-main">
+            <div class="container">
+                <!-- Toggler -->
+                <button class="navbar-toggler order-lg-2 ml-n3 ml-lg-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Brand -->
+                <a class="navbar-brand order-lg-1" href="/dashboard">
+                    <img style="border-radius: 30px;" alt="Image placeholder" src="/images/mine.png" id="navbar-logo">
+                </a>
+                <!-- Collapse -->
+                <div class="collapse navbar-collapse navbar-collapse-overlay order-lg-3" id="navbar-main-collapse">
+                    <!-- Toggler -->
+                    <div class="position-relative">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <i data-feather="x"></i>
+                        </button>
+                    </div>
+                    <!-- Main navigation -->
+                    <!-- Right navigation -->
+                    <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+                       
+                        <li class="nav-item dropdown dropdown-animate">
+                            <a class="nav-link nav-link-icon px-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="settings"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow p-3">
+                                <h6 class="dropdown-header px-0 mb-2 text-primary">Welcome, <%= user.name %>!</h6>
+                                <a href="/dashboard" class="dropdown-item">
+                                    <i data-feather="user"></i>
+                                    <span>My profile</span>
+                                </a>
+                               
+                               
+                                <div class="dropdown-divider"></div>
+                                <a href="/users/settings" class="dropdown-item">
+                                    <i data-feather="settings"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="/users/logout" class="dropdown-item">
+                                    <i data-feather="log-out"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown dropdown-animate">
+                            <a class="nav-link nav-link-icon px-2" href="#modal-notifications" role="button" data-toggle="modal">
+                                <i data-feather="bell"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Mobile button -->
+                    <div class="d-lg-none px-4 text-center">
+                        <a href="/users/logout" class="btn btn-block btn-sm btn-warning" target="_blank">Logout</a>
+                    </div>
+                </div>
+                <!-- Avatar menu -->
+                <div class="order-lg-4 ml-lg-3">
+                    <a class="" href="#modal-profile" role="button" data-toggle="modal">
+                        <span class="avatar rounded-circle">
+                            <img alt="Image placeholder" src="/images/iconlaw.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+  
+    
+    <!-- Main content -->
+    <!-- Header -->
+    <section class="pt-5 bg-section-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <!-- Surtitle -->
+                            <span class="surtitle">Your account</span>
+                            <!-- Title -->
+                            <h1 class="h2 mb-0">
+                               User Pages Display Settings
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-4">
+                        <div class="col">
+                            <ul class="nav nav-tabs overflow-x">
+                                <li class="nav-item">
+                                    <a href="/dashboard" class="nav-link">
+                                        Dashboard
+                                    </a>
+                                </li>
+    
+                                <li class="nav-item">
+                                    <a href="/users/admintasks" class="nav-link">
+                                        Tasks
+                                    </a>
+                                </li>
+    
+                                <li class="nav-item">
+                                    <a href="/users/admintips" class="nav-link">
+                                        Tips
+                                    </a>
+                                </li>
+                              
+                                <li class="nav-item">
+                                    <a href="/users/admrrifis" class="nav-link active">
+                                       User Display Settings
+                                    </a>
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slice slice-sm bg-section-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <!-- Title -->
+                    <h5 class="mb-3">Payments Centre Page</h5>
+                    <!-- Card -->
+                    <div class="row align-items-centre">
+                    <div class="col-md-5">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item d-flex w-100 justify-content-between">
+                                <div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="shop-notification-1" checked onchange="fire()">
+                                        <label class="custom-control-label" for="shop-notification-1"></label>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item d-flex w-100 justify-content-between">
+                                <div>
+                                    <h6 class="font-weight-light mb-1">Fill Bank Details button</h6>
+                                    <span class="text-sm text-muted">This sets the display status of the button.</span>
+                                </div>
+                                <div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="shop-notification-2" checked>
+                                        <label class="custom-control-label" for="shop-notification-2"></label>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="mt-5">
+                        <!-- Title -->
+                        <h5 class="mb-3">Login Button</h5>
+                        <!-- Card -->
+                        <div class="col-md-10">
+                        <div class="card">
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item d-flex w-100 justify-content-between">
+                                    <div>
+                                        <h6 class="font-weight-light mb-1">Set Display Setting of Button</h6>
+                                        <span class="text-sm text-muted">Toggle Display of Login button on Login Page.</span>
+                                    </div>
+                                    <div>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="card-notification-1">
+                                            <label class="custom-control-label" for="card-notification-1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Core JS  -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/libs/svg-injector/dist/svg-injector.min.js"></script>
+    <script src="../../assets/libs/feather-icons/dist/feather.min.js"></script>
+    <!-- Optional JS -->
+    <script src="../../assets/libs/in-view/dist/in-view.min.js"></script>
+    <script src="../../assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
+    <script src="../../assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <!-- Page JS -->
+    <script src="../../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
+    <!-- Quick JS -->
+    <script src="../../assets/js/quick-website.js"></script>
+    <!-- Feather Icons -->
+    <script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+    </script>
+</body>
+
+</html>
